@@ -33,5 +33,4 @@ class ServiceController extends AbstractController
         return $this->redirectToRoute('home_index');
     }
 
-
 }

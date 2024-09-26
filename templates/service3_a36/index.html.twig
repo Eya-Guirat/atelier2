@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello Service3A36Controller!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+
+
+
+<div class="example-wrapper">
+    <h1>Hello {{ p }}! ✅</h1>
+    
+  <h4> table d'objet : {{ tab[0].id}} </h4>
+    <br>
+
+    {% set pi = 3.14%}
+    <h4> constante : {{pi}} </h4>
+
+    
+    {% if 5 not in [1,2,5,3] %}
+    5 non presente 
+    {% endif %}
+
+
+    <br><br>
+
+    <h4>table multi</h4>
+
+    <table>
+        <tr>
+        <th>Id</th>
+        <th>picture</th>
+        <th>username</th>
+
+        </tr>
+    
+    {% for a in eya %}
+
+    <tr>
+    <td>{{a.id}}</td>
+    <td> <img src={{a.picture}}  style="width: 100px; height: auto;"></td>
+    <td>{{a.username | upper}}</td>
+    </tr>
+
+    {% endfor %}
+    </table>
+
+
+    {% set tab = [1, 5, 2, 3]%}
+    <h4> max table : {{max(tab)}}</h4>
+    <h4> min table : {{min(tab)}}</h4>
+
+</div>
+{% endblock %}
