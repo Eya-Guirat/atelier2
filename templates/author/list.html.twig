@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello List{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="example-wrapper">
+    
+<h1>Authors List</h1>
+
+{% if authors is empty %}
+        <p>No authors found.</p>
+    {% else %}
+
+ <table>
+        <tr>
+        <th>Id</th>
+        <th>Picture</th>
+        <th>username</th>
+        <th>Email</th>
+        <th>Nb_books</th>
+        <th>Details</th>
+
+        </tr>
+    
+    {% for author in authors %}
+    <tr>
+    <td>{{author.id}}</td>
+    <td> <img src={{author.picture}}  style="width: 100px; height: auto;"></td>
+    <td>{{author.username | upper}}</td>
+    <td>{{author.email}}</td>
+    <td>{{author.nb_books}}</td>
+    <td><a href="{{ path('author_details', { 'id': author.id }) }}">Details</a></td>
+    </tr>
+    {% endfor %}
+    </table>
+
+    <p>Total Authors: {{ authors | length }}</p>
+    <p>Total Books: {{ total_books }}</p>
+    
+
+    
+
+{% endif %}
+
+
+
+{% endblock %}

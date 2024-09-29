@@ -30,24 +30,7 @@
 
     <h4>table multi</h4>
 
-    <table>
-        <tr>
-        <th>Id</th>
-        <th>picture</th>
-        <th>username</th>
-
-        </tr>
     
-    {% for a in eya %}
-
-    <tr>
-    <td>{{a.id}}</td>
-    <td> <img src={{a.picture}}  style="width: 100px; height: auto;"></td>
-    <td>{{a.username | upper}}</td>
-    </tr>
-
-    {% endfor %}
-    </table>
 
 
     {% set tab = [1, 5, 2, 3]%}
